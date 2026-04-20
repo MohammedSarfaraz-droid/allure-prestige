@@ -1,0 +1,179 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Allure Properties Group — Editorial Design System
+   All colors HSL. Light theme only. Cream/ink/gold palette.
+*/
+
+@layer base {
+  :root {
+    /* Brand tokens (HSL components only) */
+    --cream: 42 40% 97%;          /* #FAF8F3 */
+    --cream-dark: 41 30% 93%;     /* #F2EFE7 */
+    --ink: 24 14% 10%;            /* #1C1917 */
+    --ink-light: 24 8% 26%;       /* #44403C */
+    --gold: 43 53% 47%;           /* #B8973A */
+    --gold-light: 41 53% 64%;     /* #D4B870 */
+    --stone: 30 5% 52%;           /* #8C8680 */
+    --stone-light: 36 12% 74%;    /* #C4BDB5 */
+    --stone-dark: 24 7% 32%;      /* #57534E */
+    --rule: 36 22% 87%;           /* #E5E0D8 */
+
+    /* shadcn semantic mapping → light cream theme */
+    --background: var(--cream);
+    --foreground: var(--ink);
+
+    --card: 0 0% 100%;
+    --card-foreground: var(--ink);
+
+    --popover: 0 0% 100%;
+    --popover-foreground: var(--ink);
+
+    --primary: var(--ink);
+    --primary-foreground: var(--cream);
+
+    --secondary: var(--cream-dark);
+    --secondary-foreground: var(--ink);
+
+    --muted: var(--cream-dark);
+    --muted-foreground: var(--stone);
+
+    --accent: var(--gold);
+    --accent-foreground: var(--ink);
+
+    --destructive: 0 70% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: var(--rule);
+    --input: var(--rule);
+    --ring: var(--gold);
+
+    --radius: 2px;
+
+    --sidebar-background: var(--cream);
+    --sidebar-foreground: var(--ink);
+    --sidebar-primary: var(--ink);
+    --sidebar-primary-foreground: var(--cream);
+    --sidebar-accent: var(--cream-dark);
+    --sidebar-accent-foreground: var(--ink);
+    --sidebar-border: var(--rule);
+    --sidebar-ring: var(--gold);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-weight: 300;
+    font-feature-settings: "ss01", "kern";
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    font-weight: 400;
+  }
+  ::selection {
+    background: hsl(var(--gold) / 0.25);
+    color: hsl(var(--ink));
+  }
+}
+
+@layer utilities {
+  .overline {
+    @apply font-sans uppercase text-gold;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+  }
+  .nav-link {
+    @apply font-sans uppercase;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+  }
+  .editorial-quote {
+    @apply font-serif italic;
+    font-weight: 400;
+  }
+
+  /* Scroll reveal */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      transform 700ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: opacity, transform;
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Image clip-path wipe */
+  .img-wipe {
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 900ms ease;
+    will-change: clip-path;
+  }
+  .img-wipe.is-visible {
+    clip-path: inset(0 0% 0 0);
+  }
+
+  /* Underline grow for nav */
+  .link-underline {
+    position: relative;
+  }
+  .link-underline::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1px;
+    background: hsl(var(--gold));
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform 250ms ease;
+  }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .vignette-left {
+    box-shadow: inset 80px 0 80px -40px hsl(var(--cream) / 0.55);
+  }
+
+  .gold-rule {
+    height: 1px;
+    background: hsl(var(--gold));
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .has-cursor body {
+    cursor: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .img-wipe { clip-path: none; transition: none; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
