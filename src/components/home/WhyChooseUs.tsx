@@ -60,7 +60,7 @@ export const WhyChooseUs = () => {
 
           {/* Row 1: image left, text right */}
           <div className="grid grid-cols-1 lg:grid-cols-[45fr_55fr] gap-10 lg:gap-16 items-center mb-20">
-            <div className="overflow-hidden img-wipe" style={{ height: 380 }}>
+            <div className="overflow-hidden img-wipe is-visible" style={{ height: 380 }}>
               <img
                 src={IMG.whyManager.src}
                 srcSet={IMG.whyManager.srcSet}
@@ -82,7 +82,7 @@ export const WhyChooseUs = () => {
               <FeatureBlock {...features[2]} delay={0} />
               <FeatureBlock {...features[3]} delay={120} />
             </div>
-            <div className="overflow-hidden img-wipe order-1 lg:order-2" style={{ height: 380 }}>
+            <div className="overflow-hidden img-wipe is-visible order-1 lg:order-2" style={{ height: 380 }}>
               <img
                 src={IMG.whyAccountant.src}
                 srcSet={IMG.whyAccountant.srcSet}

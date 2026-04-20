@@ -19,7 +19,7 @@ export const ImageStrip = () => {
                 sizes={it.img.sizes}
                 alt={it.img.alt}
                 loading="lazy"
-                className="w-full h-full object-cover img-wipe"
+                className="w-full h-full object-cover img-wipe is-visible"
                 data-reveal-delay={i * 200}
               />
             </div>

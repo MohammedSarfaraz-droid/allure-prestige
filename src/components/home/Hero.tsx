@@ -25,7 +25,7 @@ export const Hero = () => {
     <section className="relative w-full" aria-label="Hero">
       <div className="grid grid-cols-1 lg:grid-cols-[55fr_45fr] min-h-screen">
         {/* LEFT */}
-        <div className="relative bg-cream flex items-center pt-32 pb-32 lg:pt-0 lg:pb-0 px-8 lg:pl-20 lg:pr-12">
+        <div className="relative bg-cream flex items-center pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-0 lg:pb-0 px-6 sm:px-8 lg:pl-20 lg:pr-12">
           <div className="max-w-[640px]">
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -38,7 +38,7 @@ export const Hero = () => {
             </motion.div>
 
             <h1
-              className="font-serif italic text-ink mt-7 text-[56px] sm:text-[72px] lg:text-[96px] leading-[1.0]"
+              className="font-serif italic text-ink mt-5 sm:mt-6 lg:mt-7 text-[56px] sm:text-[72px] lg:text-[96px] leading-[1.0]"
               style={{ letterSpacing: "-0.03em" }}
             >
               {headlineWords.map((w, i) => (
@@ -64,7 +64,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.9 }}
-              className="font-serif italic text-stone-dark mt-5 text-[20px] sm:text-[24px] lg:text-[26px] leading-[1.4]"
+              className="font-serif italic text-stone-dark mt-4 sm:mt-5 text-[20px] sm:text-[24px] lg:text-[26px] leading-[1.4]"
             >
               Financial precision. Community care. 19 years of unwavering excellence.
             </motion.p>
@@ -74,8 +74,8 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 1.1 }}
             >
-              <div className="w-20 h-px bg-rule mt-10" aria-hidden />
-              <div className="flex flex-wrap gap-4 mt-10">
+              <div className="w-20 h-px bg-rule mt-7 sm:mt-8 lg:mt-10" aria-hidden />
+              <div className="flex flex-wrap gap-4 mt-7 sm:mt-8 lg:mt-10">
                 <Link
                   to="/services"
                   className="nav-link inline-block bg-gold text-ink px-9 py-3.5 hover:bg-gold-light transition-colors duration-250"
@@ -108,7 +108,7 @@ export const Hero = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, delay: 1.6 }}
-              className="mt-10 lg:absolute lg:bottom-10 lg:left-20 lg:right-12"
+              className="mt-8 sm:mt-10 lg:absolute lg:bottom-10 lg:left-20 lg:right-12"
             >
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 font-sans text-[12px] text-stone">
                 <span>19+ years</span>
@@ -122,7 +122,7 @@ export const Hero = () => {
         </div>
 
         {/* RIGHT */}
-        <div className="relative overflow-hidden bg-cream-dark min-h-[60vh] lg:min-h-screen">
+        <div className="relative overflow-hidden bg-cream-dark min-h-[42vh] sm:min-h-[50vh] lg:min-h-screen">
           <motion.img
             ref={imgRef}
             initial={{ scale: 1.04, opacity: 0 }}

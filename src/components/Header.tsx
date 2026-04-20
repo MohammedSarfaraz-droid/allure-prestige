@@ -75,7 +75,7 @@ export const Header = () => {
           <div className="hidden lg:block">
             <Link
               to="/contact"
-              className="nav-link inline-block border border-gold text-gold px-6 py-2.5 transition-colors duration-250 hover:bg-gold hover:text-ink"
+              className="nav-link inline-block border border-gold bg-gold text-ink px-6 py-2.5"
               style={{ borderRadius: 2 }}
             >
               Request Consultation
@@ -133,7 +133,7 @@ export const Header = () => {
               >
                 <Link
                   to="/contact"
-                  className="nav-link inline-block border border-gold text-gold px-6 py-3"
+                  className="nav-link inline-block border border-gold bg-gold text-ink px-6 py-3"
                   style={{ borderRadius: 2 }}
                 >
                   Request Consultation
